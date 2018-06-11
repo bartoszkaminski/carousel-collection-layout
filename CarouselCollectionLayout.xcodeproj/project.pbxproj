@@ -11,6 +11,7 @@
 		0E96CCC720CEF9C100DAC3F2 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCC620CEF9C100DAC3F2 /* CarouselViewController.swift */; };
 		0E96CCCC20CEF9C200DAC3F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */; };
 		0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */; };
+		0E96CCD720CEFDE300DAC3F2 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */; };
 		F588F57D864E4E4F682488D7 /* Pods_CarouselCollectionLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E96CCCE20CEF9C200DAC3F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E96CCD020CEF9C200DAC3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarouselCollectionLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AE78349CD52B66B9245AF9 /* Pods-CarouselCollectionLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.debug.xcconfig"; sourceTree = "<group>"; };
 		A9182FB779CA13BEAD592013 /* Pods-CarouselCollectionLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				0E96CCC420CEF9C100DAC3F2 /* AppDelegate.swift */,
 				0E96CCC620CEF9C100DAC3F2 /* CarouselViewController.swift */,
+				0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */,
 				0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */,
 				0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */,
 				0E96CCD020CEF9C200DAC3F2 /* Info.plist */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E96CCD720CEFDE300DAC3F2 /* CarouselCell.swift in Sources */,
 				0E96CCC720CEF9C100DAC3F2 /* CarouselViewController.swift in Sources */,
 				0E96CCC520CEF9C100DAC3F2 /* AppDelegate.swift in Sources */,
 			);
