@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E96CCC520CEF9C100DAC3F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCC420CEF9C100DAC3F2 /* AppDelegate.swift */; };
 		0E96CCC720CEF9C100DAC3F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCC620CEF9C100DAC3F2 /* ViewController.swift */; };
-		0E96CCCA20CEF9C100DAC3F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCC820CEF9C100DAC3F2 /* Main.storyboard */; };
 		0E96CCCC20CEF9C200DAC3F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */; };
 		0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */; };
 		F588F57D864E4E4F682488D7 /* Pods_CarouselCollectionLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */; };
@@ -19,7 +18,6 @@
 		0E96CCC120CEF9C000DAC3F2 /* CarouselCollectionLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarouselCollectionLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E96CCC420CEF9C100DAC3F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E96CCC620CEF9C100DAC3F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E96CCC920CEF9C100DAC3F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E96CCCE20CEF9C200DAC3F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E96CCD020CEF9C200DAC3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			children = (
 				0E96CCC420CEF9C100DAC3F2 /* AppDelegate.swift */,
 				0E96CCC620CEF9C100DAC3F2 /* ViewController.swift */,
-				0E96CCC820CEF9C100DAC3F2 /* Main.storyboard */,
 				0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */,
 				0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */,
 				0E96CCD020CEF9C200DAC3F2 /* Info.plist */,
@@ -151,7 +148,6 @@
 			files = (
 				0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */,
 				0E96CCCC20CEF9C200DAC3F2 /* Assets.xcassets in Resources */,
-				0E96CCCA20CEF9C100DAC3F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,14 +220,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0E96CCC820CEF9C100DAC3F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E96CCC920CEF9C100DAC3F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -365,7 +353,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55MA7EFL44;
 				INFOPLIST_FILE = CarouselCollectionLayout/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = bartoszkaminski.CarouselCollectionLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -381,7 +372,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55MA7EFL44;
 				INFOPLIST_FILE = CarouselCollectionLayout/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = bartoszkaminski.CarouselCollectionLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
