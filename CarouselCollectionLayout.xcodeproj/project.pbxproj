@@ -12,6 +12,7 @@
 		0E96CCCA20CEF9C100DAC3F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCC820CEF9C100DAC3F2 /* Main.storyboard */; };
 		0E96CCCC20CEF9C200DAC3F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */; };
 		0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */; };
+		F588F57D864E4E4F682488D7 /* Pods_CarouselCollectionLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E96CCCE20CEF9C200DAC3F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E96CCD020CEF9C200DAC3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarouselCollectionLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0AE78349CD52B66B9245AF9 /* Pods-CarouselCollectionLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.debug.xcconfig"; sourceTree = "<group>"; };
+		A9182FB779CA13BEAD592013 /* Pods-CarouselCollectionLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F588F57D864E4E4F682488D7 /* Pods_CarouselCollectionLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0E96CCC320CEF9C000DAC3F2 /* CarouselCollectionLayout */,
 				0E96CCC220CEF9C000DAC3F2 /* Products */,
+				ECC954EB07317E69B5E6E276 /* Pods */,
+				21E0F26F322FF26B29DDEAE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = CarouselCollectionLayout;
 			sourceTree = "<group>";
 		};
+		21E0F26F322FF26B29DDEAE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECC954EB07317E69B5E6E276 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0AE78349CD52B66B9245AF9 /* Pods-CarouselCollectionLayout.debug.xcconfig */,
+				A9182FB779CA13BEAD592013 /* Pods-CarouselCollectionLayout.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E96CCD320CEF9C200DAC3F2 /* Build configuration list for PBXNativeTarget "CarouselCollectionLayout" */;
 			buildPhases = (
+				EA15C1DDFBE3D7D9D8565103 /* [CP] Check Pods Manifest.lock */,
 				0E96CCBD20CEF9C000DAC3F2 /* Sources */,
 				0E96CCBE20CEF9C000DAC3F2 /* Frameworks */,
 				0E96CCBF20CEF9C000DAC3F2 /* Resources */,
+				87ED44E80BED53D20F155AB9 /* [CP] Embed Pods Frameworks */,
+				75F93769086EEA95F7B487A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75F93769086EEA95F7B487A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87ED44E80BED53D20F155AB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA15C1DDFBE3D7D9D8565103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarouselCollectionLayout-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E96CCBD20CEF9C000DAC3F2 /* Sources */ = {
@@ -278,15 +359,13 @@
 		};
 		0E96CCD420CEF9C200DAC3F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0AE78349CD52B66B9245AF9 /* Pods-CarouselCollectionLayout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55MA7EFL44;
 				INFOPLIST_FILE = CarouselCollectionLayout/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bartoszkaminski.CarouselCollectionLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +375,13 @@
 		};
 		0E96CCD520CEF9C200DAC3F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9182FB779CA13BEAD592013 /* Pods-CarouselCollectionLayout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55MA7EFL44;
 				INFOPLIST_FILE = CarouselCollectionLayout/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bartoszkaminski.CarouselCollectionLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
