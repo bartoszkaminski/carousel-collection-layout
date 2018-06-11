@@ -13,10 +13,12 @@ class CarouselViewController: UIViewController {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
         collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.reusableIndentifer)
         collectionView.dataSource = self
+        collectionView.delegate = self
         return collectionView
     }()
 
@@ -31,7 +33,7 @@ class CarouselViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
-            make.height.equalTo(150)
+            make.height.equalTo(100)
         }
     }
 }
@@ -39,12 +41,18 @@ class CarouselViewController: UIViewController {
 extension CarouselViewController: UICollectionViewDataSource {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.reusableIndentifer, for: indexPath) as! CarouselCell
         cell.label.text = "Text"
         return cell
+    }
+}
+
+extension CarouselViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 60)
     }
 }
