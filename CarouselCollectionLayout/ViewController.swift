@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
+        collectionView.dataSource = self
         return collectionView
     }()
 
@@ -31,5 +32,16 @@ class ViewController: UIViewController {
             make.centerY.equalToSuperview()
             make.height.equalTo(150)
         }
+    }
+}
+
+extension ViewController: UICollectionViewDataSource {
+   
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
     }
 }
