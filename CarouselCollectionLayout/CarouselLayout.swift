@@ -48,8 +48,7 @@ class CarouselLayout: UICollectionViewLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = collectionView else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
         let midSide = collectionView.bounds.size.width / 2
-        let proposedContentOffsetCenterOrigin = proposedContentOffset.x + midSide
-        let closestAttribute = findClosestAttributes(toPoint: CGPoint(x: proposedContentOffsetCenterOrigin, y: proposedContentOffsetCenterOrigin)) ?? UICollectionViewLayoutAttributes()
+		guard let closestAttribute = findClosestAttributes(toXPosition: proposedContentOffset.x + midSide) else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
         return CGPoint(x: closestAttribute.center.x - midSide, y: proposedContentOffset.y)
     }
 
@@ -102,9 +101,9 @@ class CarouselLayout: UICollectionViewLayout {
 
     // MARK: - Private Methods
     
-    private func findClosestAttributes(toPoint point: CGPoint) -> UICollectionViewLayoutAttributes? {
+    private func findClosestAttributes(toXPosition xPosition: CGFloat) -> UICollectionViewLayoutAttributes? {
         guard let collectionView = collectionView, let layoutAttributes = layoutAttributesForElements(in: collectionView.bounds) else { return nil }
-        return layoutAttributes.min(by: { abs($0.center.x - point.x) < abs($1.center.x - point.x) })
+        return layoutAttributes.min(by: { abs($0.center.x - xPosition) < abs($1.center.x - xPosition) })
     }
     
     private func updateInsets() {
