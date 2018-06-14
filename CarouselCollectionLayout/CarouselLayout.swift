@@ -50,7 +50,7 @@ class CarouselLayout: UICollectionViewLayout {
         let midSide = collectionView.bounds.size.width / 2
         let proposedContentOffsetCenterOrigin = proposedContentOffset.x + midSide
         let closestAttribute = findClosestAttributes(toPoint: CGPoint(x: proposedContentOffsetCenterOrigin, y: proposedContentOffsetCenterOrigin)) ?? UICollectionViewLayoutAttributes()
-        return CGPoint(x: floor(closestAttribute.center.x - midSide), y: proposedContentOffset.y)
+        return CGPoint(x: closestAttribute.center.x - midSide, y: proposedContentOffset.y)
     }
 
     // MARK: - Invalidate layout
