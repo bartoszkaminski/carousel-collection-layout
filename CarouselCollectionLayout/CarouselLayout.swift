@@ -44,16 +44,15 @@ class CarouselLayout: UICollectionViewLayout {
             .map { self.shiftedAttributes(from: $1) }
         return cachedItemsAttributes
     }
-    
+
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        guard let collectionView = collectionView, !collectionView.isPagingEnabled
-            else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
+        guard let collectionView = collectionView else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
         let midSide = collectionView.bounds.size.width / 2
         let proposedContentOffsetCenterOrigin = proposedContentOffset.x + midSide
         let closestAttribute = findClosestAttributes(toPoint: CGPoint(x: proposedContentOffsetCenterOrigin, y: proposedContentOffsetCenterOrigin)) ?? UICollectionViewLayoutAttributes()
         return CGPoint(x: floor(closestAttribute.center.x - midSide), y: proposedContentOffset.y)
     }
-    
+
     // MARK: - Invalidate layout
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -104,9 +103,7 @@ class CarouselLayout: UICollectionViewLayout {
     // MARK: - Private Methods
     
     private func findClosestAttributes(toPoint point: CGPoint) -> UICollectionViewLayoutAttributes? {
-        guard let collectionView = collectionView, !collectionView.isPagingEnabled,
-            let layoutAttributes = layoutAttributesForElements(in: collectionView.bounds)
-            else { return nil }
+        guard let collectionView = collectionView, let layoutAttributes = layoutAttributesForElements(in: collectionView.bounds) else { return nil }
         return layoutAttributes.min(by: { abs($0.center.x - point.x) < abs($1.center.x - point.x) })
     }
     
