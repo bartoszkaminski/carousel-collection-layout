@@ -13,13 +13,14 @@ class CarouselLayout: UICollectionViewLayout {
     // MARK: - Public Properties
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: horizontalEdges.right - horizontalEdges.left, height: 100)
+		let leftmostEdge = cachedItemsAttributes.values.map { $0.frame.minX }.min() ?? 0
+		let rightmostEdge = cachedItemsAttributes.values.map { $0.frame.maxX }.max() ?? 0
+        return CGSize(width: rightmostEdge - leftmostEdge, height: 100)
     }
     
     // MARK: - Private Properties
 
     private var cachedItemsAttributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
-    private var horizontalEdges: (left: CGFloat, right: CGFloat) = (left: 0, right: 0)
     private let itemSize = CGSize(width: 100, height: 60)
     private let spacing: CGFloat = 30
     
@@ -36,8 +37,6 @@ class CarouselLayout: UICollectionViewLayout {
             let indexPath = IndexPath(item: item, section: 0)
             cachedItemsAttributes[indexPath] = rawAttributesForItem(at: indexPath)
         }
-        horizontalEdges.left = cachedItemsAttributes.values.map { $0.frame.minX }.min() ?? 0
-        horizontalEdges.right = cachedItemsAttributes.values.map { $0.frame.maxX }.max() ?? 0
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

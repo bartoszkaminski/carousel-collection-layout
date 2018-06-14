@@ -103,7 +103,6 @@
 				0E96CCBE20CEF9C000DAC3F2 /* Frameworks */,
 				0E96CCBF20CEF9C000DAC3F2 /* Resources */,
 				87ED44E80BED53D20F155AB9 /* [CP] Embed Pods Frameworks */,
-				75F93769086EEA95F7B487A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,21 +159,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		75F93769086EEA95F7B487A3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		87ED44E80BED53D20F155AB9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
