@@ -40,9 +40,10 @@ class CarouselLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let cachedItemsAttributes = self.cachedItemsAttributes
-            .map { self.shiftedAttributes(from: $1) }
         return cachedItemsAttributes
+			.map { $0.value }
+			.filter { $0.frame.intersects(rect) }
+			.map { self.shiftedAttributes(from: $0) }
     }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
