@@ -41,12 +41,12 @@ class CarouselViewController: UIViewController {
 extension CarouselViewController: UICollectionViewDataSource {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.reusableIndentifer, for: indexPath) as! CarouselCell
-        cell.imageView.image = UIImage(named: "Tejita.JPG")
+        cell.imageView.image = UIImage(named: "\(indexPath.item + 1).jpg")
         return cell
     }
 }

@@ -13,7 +13,12 @@
 		0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */; };
 		0E96CCD720CEFDE300DAC3F2 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */; };
 		0E96CCD920CF032300DAC3F2 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCD820CF032300DAC3F2 /* CarouselLayout.swift */; };
-		0ED9BAD120D5790400FD2154 /* Tejita.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0ED9BAD020D5790300FD2154 /* Tejita.JPG */; };
+		0EC32DEC20D5C6E200B3A2E7 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC32DE620D5C6E100B3A2E7 /* 6.jpg */; };
+		0EC32DED20D5C6E200B3A2E7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC32DE720D5C6E100B3A2E7 /* 1.jpg */; };
+		0EC32DEE20D5C6E200B3A2E7 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC32DE820D5C6E100B3A2E7 /* 5.jpg */; };
+		0EC32DEF20D5C6E200B3A2E7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC32DE920D5C6E100B3A2E7 /* 3.jpg */; };
+		0EC32DF020D5C6E200B3A2E7 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC32DEA20D5C6E100B3A2E7 /* 4.jpg */; };
+		0EC32DF120D5C6E200B3A2E7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC32DEB20D5C6E200B3A2E7 /* 2.jpg */; };
 		F588F57D864E4E4F682488D7 /* Pods_CarouselCollectionLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +31,12 @@
 		0E96CCD020CEF9C200DAC3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		0E96CCD820CF032300DAC3F2 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
-		0ED9BAD020D5790300FD2154 /* Tejita.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tejita.JPG; sourceTree = "<group>"; };
+		0EC32DE620D5C6E100B3A2E7 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		0EC32DE720D5C6E100B3A2E7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		0EC32DE820D5C6E100B3A2E7 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		0EC32DE920D5C6E100B3A2E7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		0EC32DEA20D5C6E100B3A2E7 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		0EC32DEB20D5C6E200B3A2E7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarouselCollectionLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AE78349CD52B66B9245AF9 /* Pods-CarouselCollectionLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.debug.xcconfig"; sourceTree = "<group>"; };
 		A9182FB779CA13BEAD592013 /* Pods-CarouselCollectionLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +90,12 @@
 		0ED9BACD20D5788000FD2154 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				0ED9BAD020D5790300FD2154 /* Tejita.JPG */,
+				0EC32DE720D5C6E100B3A2E7 /* 1.jpg */,
+				0EC32DEB20D5C6E200B3A2E7 /* 2.jpg */,
+				0EC32DE920D5C6E100B3A2E7 /* 3.jpg */,
+				0EC32DEA20D5C6E100B3A2E7 /* 4.jpg */,
+				0EC32DE820D5C6E100B3A2E7 /* 5.jpg */,
+				0EC32DE620D5C6E100B3A2E7 /* 6.jpg */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -162,9 +177,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC32DEC20D5C6E200B3A2E7 /* 6.jpg in Resources */,
+				0EC32DF020D5C6E200B3A2E7 /* 4.jpg in Resources */,
+				0EC32DEE20D5C6E200B3A2E7 /* 5.jpg in Resources */,
+				0EC32DED20D5C6E200B3A2E7 /* 1.jpg in Resources */,
+				0EC32DEF20D5C6E200B3A2E7 /* 3.jpg in Resources */,
 				0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */,
+				0EC32DF120D5C6E200B3A2E7 /* 2.jpg in Resources */,
 				0E96CCCC20CEF9C200DAC3F2 /* Assets.xcassets in Resources */,
-				0ED9BAD120D5790400FD2154 /* Tejita.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
