@@ -46,7 +46,7 @@ extension CarouselViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCell.reusableIndentifer, for: indexPath) as! CarouselCell
-        cell.label.text = "Text"
+        cell.imageView.image = UIImage(named: "Tejita.JPG")
         return cell
     }
 }

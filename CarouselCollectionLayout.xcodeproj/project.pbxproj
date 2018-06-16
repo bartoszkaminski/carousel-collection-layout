@@ -13,6 +13,7 @@
 		0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */; };
 		0E96CCD720CEFDE300DAC3F2 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */; };
 		0E96CCD920CF032300DAC3F2 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96CCD820CF032300DAC3F2 /* CarouselLayout.swift */; };
+		0ED9BAD120D5790400FD2154 /* Tejita.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0ED9BAD020D5790300FD2154 /* Tejita.JPG */; };
 		F588F57D864E4E4F682488D7 /* Pods_CarouselCollectionLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		0E96CCD020CEF9C200DAC3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		0E96CCD820CF032300DAC3F2 /* CarouselLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayout.swift; sourceTree = "<group>"; };
+		0ED9BAD020D5790300FD2154 /* Tejita.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tejita.JPG; sourceTree = "<group>"; };
 		76EB841B4D3DD22AAA63BB00 /* Pods_CarouselCollectionLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarouselCollectionLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AE78349CD52B66B9245AF9 /* Pods-CarouselCollectionLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.debug.xcconfig"; sourceTree = "<group>"; };
 		A9182FB779CA13BEAD592013 /* Pods-CarouselCollectionLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarouselCollectionLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarouselCollectionLayout/Pods-CarouselCollectionLayout.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,11 +69,20 @@
 				0E96CCC620CEF9C100DAC3F2 /* CarouselViewController.swift */,
 				0E96CCD620CEFDE300DAC3F2 /* CarouselCell.swift */,
 				0E96CCD820CF032300DAC3F2 /* CarouselLayout.swift */,
+				0ED9BACD20D5788000FD2154 /* Photos */,
 				0E96CCCB20CEF9C200DAC3F2 /* Assets.xcassets */,
 				0E96CCCD20CEF9C200DAC3F2 /* LaunchScreen.storyboard */,
 				0E96CCD020CEF9C200DAC3F2 /* Info.plist */,
 			);
 			path = CarouselCollectionLayout;
+			sourceTree = "<group>";
+		};
+		0ED9BACD20D5788000FD2154 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				0ED9BAD020D5790300FD2154 /* Tejita.JPG */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		21E0F26F322FF26B29DDEAE5 /* Frameworks */ = {
@@ -153,6 +164,7 @@
 			files = (
 				0E96CCCF20CEF9C200DAC3F2 /* LaunchScreen.storyboard in Resources */,
 				0E96CCCC20CEF9C200DAC3F2 /* Assets.xcassets in Resources */,
+				0ED9BAD120D5790400FD2154 /* Tejita.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
