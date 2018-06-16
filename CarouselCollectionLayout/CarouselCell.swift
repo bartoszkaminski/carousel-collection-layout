@@ -19,12 +19,20 @@ class CarouselCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .red
+		layer.mask = maskShapeLayer
         setupLabel()
     }
+
+	private let maskShapeLayer: CAShapeLayer = CAShapeLayer()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+	override func layoutSublayers(of layer: CALayer) {
+		super.layoutSublayers(of: layer)
+		maskShapeLayer.path = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: 12).cgPath
+	}
     
     private func setupLabel() {
         contentView.addSubview(label)

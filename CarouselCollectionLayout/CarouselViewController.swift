@@ -14,7 +14,7 @@ class CarouselViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         let layout = CarouselLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
+		collectionView.backgroundColor = .clear
         collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: CarouselCell.reusableIndentifer)
         collectionView.dataSource = self
         collectionView.delegate = self
