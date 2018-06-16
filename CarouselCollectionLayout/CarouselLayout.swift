@@ -23,6 +23,16 @@ class CarouselLayout: UICollectionViewLayout {
     private var cachedItemsAttributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
     private let itemSize = CGSize(width: 150, height: 100)
     private let spacing: CGFloat = 30
+	private let spacingWhenFocused: CGFloat = 60
+
+	private var continousFocusedIndex: CGFloat {
+		guard let collectionView = collectionView else { return 0 }
+		let collectionCenter = collectionView.bounds.size.width / 2
+		let offset = collectionView.contentOffset.x
+		let normalizedPosition = collectionCenter + offset - itemSize.width / 2
+		let cellWithSpacingWidth: CGFloat = itemSize.width + spacing
+		return normalizedPosition / cellWithSpacingWidth
+	}
     
     // MARK: - Public Methods
     
@@ -43,7 +53,7 @@ class CarouselLayout: UICollectionViewLayout {
         return cachedItemsAttributes
 			.map { $0.value }
 			.filter { $0.frame.intersects(rect) }
-			.map { self.shiftedAttributes(from: $0) }
+			.map { self.translatedAttributes(from: $0) }
     }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
@@ -73,7 +83,7 @@ class CarouselLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = cachedItemsAttributes[indexPath] else { fatalError("No attributes cached") }
-        return shiftedAttributes(from: attributes)
+        return translatedAttributes(from: attributes)
     }
     
     private func rawAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
@@ -87,14 +97,14 @@ class CarouselLayout: UICollectionViewLayout {
         return attributes
     }
     
-    private func shiftedAttributes(from attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+    private func translatedAttributes(from attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let attributes = attributes.copy() as? UICollectionViewLayoutAttributes else { fatalError("Couldn't copy attributes") }
-        let focusedIndex = continousFocusedIndex()
-        let roundedFocusedIndex = round(focusedIndex)
+		let roundedFocusedIndex = round(continousFocusedIndex)
         guard attributes.indexPath.item != Int(roundedFocusedIndex) else { return attributes }
-        let threshold = focusedIndex >= roundedFocusedIndex ? roundedFocusedIndex + 0.5 : roundedFocusedIndex - 0.5
-        let normalizedDistanceFromThreshold = abs(focusedIndex - threshold) / 0.5
-        let translate = 30 * normalizedDistanceFromThreshold
+		let translateArea = (roundedFocusedIndex - 0.5)...(roundedFocusedIndex + 0.5)
+		let distanceToClosestIdlePoint = min(abs(continousFocusedIndex - translateArea.lowerBound), abs(continousFocusedIndex - translateArea.upperBound))
+		let normalizedTranslateFactor = distanceToClosestIdlePoint * 2
+        let translate = (spacingWhenFocused - spacing) * normalizedTranslateFactor
         let translateDirection: CGFloat = attributes.indexPath.item < Int(roundedFocusedIndex) ? -1 : 1
         attributes.transform = CGAffineTransform(translationX: translateDirection * translate, y: 0)
         return attributes
@@ -111,14 +121,5 @@ class CarouselLayout: UICollectionViewLayout {
         guard let collectionView = collectionView else { return }
         collectionView.contentInset.left = (collectionView.bounds.size.width - itemSize.width) / 2
         collectionView.contentInset.right = (collectionView.bounds.size.width - itemSize.width) / 2
-    }
-    
-    private func continousFocusedIndex() -> CGFloat {
-        guard let collectionView = collectionView else { return 0 }
-        let collectionCenter = collectionView.frame.size.width / 2
-        let offset = collectionView.contentOffset.x
-        let normalizedPosition = collectionCenter + offset - itemSize.width / 2
-        let cellWithSpacingWidth: CGFloat = itemSize.width + spacing
-        return normalizedPosition / cellWithSpacingWidth
     }
 }
