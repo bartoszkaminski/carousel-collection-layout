@@ -21,7 +21,7 @@ class CarouselLayout: UICollectionViewLayout {
     // MARK: - Private Properties
 
     private var cachedItemsAttributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
-    private let itemSize = CGSize(width: 100, height: 60)
+    private let itemSize = CGSize(width: 150, height: 100)
     private let spacing: CGFloat = 30
     
     // MARK: - Public Methods
