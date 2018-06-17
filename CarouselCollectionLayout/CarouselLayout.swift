@@ -27,11 +27,9 @@ class CarouselLayout: UICollectionViewLayout {
 
 	private var continousFocusedIndex: CGFloat {
 		guard let collectionView = collectionView else { return 0 }
-		let collectionCenter = collectionView.bounds.size.width / 2
-		let offset = collectionView.contentOffset.x
-		let normalizedPosition = collectionCenter + offset - itemSize.width / 2
-		let cellWithSpacingWidth: CGFloat = itemSize.width + spacing
-		return normalizedPosition / cellWithSpacingWidth
+		let collectionViewMidX = collectionView.bounds.size.width / 2
+		let offset = collectionViewMidX + collectionView.contentOffset.x - itemSize.width / 2
+		return offset / (itemSize.width + spacing)
 	}
     
     // MARK: - Public Methods
@@ -45,7 +43,7 @@ class CarouselLayout: UICollectionViewLayout {
         let itemsCount = collectionView.numberOfItems(inSection: 0)
         for item in 0..<itemsCount {
             let indexPath = IndexPath(item: item, section: 0)
-            cachedItemsAttributes[indexPath] = rawAttributesForItem(at: indexPath)
+            cachedItemsAttributes[indexPath] = createAttributesForItem(at: indexPath)
         }
     }
     
@@ -53,40 +51,36 @@ class CarouselLayout: UICollectionViewLayout {
         return cachedItemsAttributes
 			.map { $0.value }
 			.filter { $0.frame.intersects(rect) }
-			.map { self.translatedAttributes(from: $0) }
+			.map { self.shiftedAttributes(from: $0) }
     }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = collectionView else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
-        let midSide = collectionView.bounds.size.width / 2
-		guard let closestAttribute = findClosestAttributes(toXPosition: proposedContentOffset.x + midSide) else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
-        return CGPoint(x: closestAttribute.center.x - midSide, y: proposedContentOffset.y)
+        let collectionViewMidX: CGFloat = collectionView.bounds.size.width / 2
+		guard let closestAttribute = findClosestAttributes(toXPosition: proposedContentOffset.x + collectionViewMidX) else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset) }
+        return CGPoint(x: closestAttribute.center.x - collectionViewMidX, y: proposedContentOffset.y)
     }
 
     // MARK: - Invalidate layout
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        if newBounds.size != collectionView?.bounds.size { invalidateCache() }
+        if newBounds.size != collectionView?.bounds.size { cachedItemsAttributes.removeAll() }
         return true
     }
     
     override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
-        if context.invalidateDataSourceCounts { invalidateCache() }
+        if context.invalidateDataSourceCounts { cachedItemsAttributes.removeAll() }
         super.invalidateLayout(with: context)
-    }
-    
-    private func invalidateCache() {
-        cachedItemsAttributes.removeAll()
     }
     
     // MARK: - Items
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = cachedItemsAttributes[indexPath] else { fatalError("No attributes cached") }
-        return translatedAttributes(from: attributes)
+        return shiftedAttributes(from: attributes)
     }
     
-    private func rawAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    private func createAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         guard let collectionView = collectionView else { return nil }
         attributes.frame.size = itemSize
@@ -97,16 +91,16 @@ class CarouselLayout: UICollectionViewLayout {
         return attributes
     }
     
-    private func translatedAttributes(from attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+    private func shiftedAttributes(from attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let attributes = attributes.copy() as? UICollectionViewLayoutAttributes else { fatalError("Couldn't copy attributes") }
 		let roundedFocusedIndex = round(continousFocusedIndex)
         guard attributes.indexPath.item != Int(roundedFocusedIndex) else { return attributes }
-		let translateArea = (roundedFocusedIndex - 0.5)...(roundedFocusedIndex + 0.5)
-		let distanceToClosestIdlePoint = min(abs(continousFocusedIndex - translateArea.lowerBound), abs(continousFocusedIndex - translateArea.upperBound))
-		let normalizedTranslateFactor = distanceToClosestIdlePoint * 2
-        let translate = (spacingWhenFocused - spacing) * normalizedTranslateFactor
-        let translateDirection: CGFloat = attributes.indexPath.item < Int(roundedFocusedIndex) ? -1 : 1
-        attributes.transform = CGAffineTransform(translationX: translateDirection * translate, y: 0)
+		let shiftArea = (roundedFocusedIndex - 0.5)...(roundedFocusedIndex + 0.5)
+		let distanceToClosestIdlePoint = min(abs(continousFocusedIndex - shiftArea.lowerBound), abs(continousFocusedIndex - shiftArea.upperBound))
+		let normalizedShiftFactor = distanceToClosestIdlePoint * 2
+        let translation = (spacingWhenFocused - spacing) * normalizedShiftFactor
+        let translationDirection: CGFloat = attributes.indexPath.item < Int(roundedFocusedIndex) ? -1 : 1
+        attributes.transform = CGAffineTransform(translationX: translationDirection * translation, y: 0)
         return attributes
     }
 
