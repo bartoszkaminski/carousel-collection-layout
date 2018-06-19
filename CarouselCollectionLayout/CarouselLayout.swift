@@ -84,10 +84,8 @@ class CarouselLayout: UICollectionViewLayout {
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         guard let collectionView = collectionView else { return nil }
         attributes.frame.size = itemSize
-        attributes.frame.origin.y = (collectionView.bounds.height - itemSize.height)/2
-        if let previousAttributes = cachedItemsAttributes.first(where: { $0.key == IndexPath(row: indexPath.item - 1, section: indexPath.section) })?.value {
-            attributes.frame.origin.x = previousAttributes.frame.maxX + spacing
-        }
+        attributes.frame.origin.y = (collectionView.bounds.height - itemSize.height) / 2
+		attributes.frame.origin.x = CGFloat(indexPath.item) * (itemSize.width + spacing)
         return attributes
     }
     
