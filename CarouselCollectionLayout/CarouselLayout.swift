@@ -94,8 +94,8 @@ class CarouselLayout: UICollectionViewLayout {
 		let roundedFocusedIndex = round(continousFocusedIndex)
         guard attributes.indexPath.item != Int(roundedFocusedIndex) else { return attributes }
 		let shiftArea = (roundedFocusedIndex - 0.5)...(roundedFocusedIndex + 0.5)
-		let distanceToClosestIdlePoint = min(abs(continousFocusedIndex - shiftArea.lowerBound), abs(continousFocusedIndex - shiftArea.upperBound))
-		let normalizedShiftFactor = distanceToClosestIdlePoint * 2
+		let distanceToClosestIdentityPoint = min(abs(continousFocusedIndex - shiftArea.lowerBound), abs(continousFocusedIndex - shiftArea.upperBound))
+		let normalizedShiftFactor = distanceToClosestIdentityPoint * 2
         let translation = (spacingWhenFocused - spacing) * normalizedShiftFactor
         let translationDirection: CGFloat = attributes.indexPath.item < Int(roundedFocusedIndex) ? -1 : 1
         attributes.transform = CGAffineTransform(translationX: translationDirection * translation, y: 0)
