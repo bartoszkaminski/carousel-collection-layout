@@ -15,7 +15,7 @@ class CarouselLayout: UICollectionViewLayout {
     override var collectionViewContentSize: CGSize {
 		let leftmostEdge = cachedItemsAttributes.values.map { $0.frame.minX }.min() ?? 0
 		let rightmostEdge = cachedItemsAttributes.values.map { $0.frame.maxX }.max() ?? 0
-        return CGSize(width: rightmostEdge - leftmostEdge, height: 100)
+        return CGSize(width: rightmostEdge - leftmostEdge, height: itemSize.height)
     }
     
     // MARK: - Private Properties
