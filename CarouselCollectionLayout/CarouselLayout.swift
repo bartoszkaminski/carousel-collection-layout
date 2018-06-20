@@ -105,8 +105,12 @@ class CarouselLayout: UICollectionViewLayout {
     // MARK: - Private Methods
     
     private func findClosestAttributes(toXPosition xPosition: CGFloat) -> UICollectionViewLayoutAttributes? {
-        guard let collectionView = collectionView, let layoutAttributes = layoutAttributesForElements(in: collectionView.bounds) else { return nil }
-        return layoutAttributes.min(by: { abs($0.center.x - xPosition) < abs($1.center.x - xPosition) })
+		guard let collectionView = collectionView else { return nil }
+		let searchRect = CGRect(
+			x: xPosition - collectionView.bounds.width, y: collectionView.bounds.minY,
+			width: collectionView.bounds.width * 2, height: collectionView.bounds.height
+		)
+        return layoutAttributesForElements(in: searchRect)?.min(by: { abs($0.center.x - xPosition) < abs($1.center.x - xPosition) })
     }
     
     private func updateInsets() {
