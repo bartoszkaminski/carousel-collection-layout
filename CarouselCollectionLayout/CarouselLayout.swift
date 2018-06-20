@@ -25,10 +25,9 @@ class CarouselLayout: UICollectionViewLayout {
     private let spacing: CGFloat = 30
 	private let spacingWhenFocused: CGFloat = 60
 
-	private var continousFocusedIndex: CGFloat {
+	private var continuousFocusedIndex: CGFloat {
 		guard let collectionView = collectionView else { return 0 }
-		let collectionViewMidX = collectionView.bounds.size.width / 2
-		let offset = collectionViewMidX + collectionView.contentOffset.x - itemSize.width / 2
+		let offset = collectionView.bounds.width / 2 + collectionView.contentOffset.x - itemSize.width / 2
 		return offset / (itemSize.width + spacing)
 	}
     
@@ -91,10 +90,10 @@ class CarouselLayout: UICollectionViewLayout {
     
     private func shiftedAttributes(from attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         guard let attributes = attributes.copy() as? UICollectionViewLayoutAttributes else { fatalError("Couldn't copy attributes") }
-		let roundedFocusedIndex = round(continousFocusedIndex)
+		let roundedFocusedIndex = round(continuousFocusedIndex)
         guard attributes.indexPath.item != Int(roundedFocusedIndex) else { return attributes }
 		let shiftArea = (roundedFocusedIndex - 0.5)...(roundedFocusedIndex + 0.5)
-		let distanceToClosestIdentityPoint = min(abs(continousFocusedIndex - shiftArea.lowerBound), abs(continousFocusedIndex - shiftArea.upperBound))
+		let distanceToClosestIdentityPoint = min(abs(continuousFocusedIndex - shiftArea.lowerBound), abs(continuousFocusedIndex - shiftArea.upperBound))
 		let normalizedShiftFactor = distanceToClosestIdentityPoint * 2
         let translation = (spacingWhenFocused - spacing) * normalizedShiftFactor
         let translationDirection: CGFloat = attributes.indexPath.item < Int(roundedFocusedIndex) ? -1 : 1
