@@ -9,6 +9,8 @@
 import UIKit
 
 class CarouselCell: UICollectionViewCell {
+    
+    // MARK: - Public Properties
 
 	let imageView: UIImageView = {
 		let imageView = UIImageView()
@@ -16,23 +18,31 @@ class CarouselCell: UICollectionViewCell {
 		return imageView
 	}()
 
+    // MARK: - Private Properties
+
+	private let maskShapeLayer: CAShapeLayer = CAShapeLayer()
+    
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .red
 		layer.mask = maskShapeLayer
         setupImageView()
     }
-
-	private let maskShapeLayer: CAShapeLayer = CAShapeLayer()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Public Methods
 
 	override func layoutSublayers(of layer: CALayer) {
 		super.layoutSublayers(of: layer)
 		maskShapeLayer.path = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: 12).cgPath
 	}
+    
+    // MARK: - Private Methods
     
     private func setupImageView() {
         contentView.addSubview(imageView)

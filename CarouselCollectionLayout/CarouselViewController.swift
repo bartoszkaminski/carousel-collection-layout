@@ -11,6 +11,8 @@ import SnapKit
 
 class CarouselViewController: UIViewController {
     
+    // MARK: - Public Properties
+    
     lazy var collectionView: UICollectionView = {
         let layout = CarouselLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -21,12 +23,16 @@ class CarouselViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupCollectionView()
     }
+    
+    // MARK: - Private Methods
 
     private func setupCollectionView() {
         view.addSubview(collectionView)
